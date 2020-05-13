@@ -15,3 +15,15 @@ Define 'feature test', define a 'stack trace', use irb to run a 'feature test'.
 
 step four:
 Solved name error with creating a DockingStation class.
+
+step five:
+Set up RSpec to expect a DockingStation class.
+
+step six:
+Create a unit test with a DockingStation class to pass RSpec test.
+
+step seven:
+feature test in REPL DockingStation class working, add a method to test 'release_bike'.
+
+step eight:
+pass unit test with addition of instance of 'release_bike'.

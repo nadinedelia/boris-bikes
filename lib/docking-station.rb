@@ -11,7 +11,9 @@ if bike.nil?
 end
 
   def dock(bike)
+    if @bike
+      fail "Error, no free space available"
+        end
     @bike = bike
-
-  end
+end
 end

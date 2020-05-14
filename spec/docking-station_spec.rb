@@ -18,4 +18,10 @@ end
   it 'throws error when empty' do
     expect { (subject.release_bike) }.to raise_error("Error, no bike available")
   end
+
+  it 'throws error when full' do
+    bike = Bike.new
+    expect { (subject.dock(bike)) }.to raise_error("Error, no free space available")
+  end
+
 end

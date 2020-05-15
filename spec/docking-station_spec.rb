@@ -6,7 +6,7 @@ describe DockingStation do
     it 'should return the bike' do
       bike = Bike.new
       subject.dock(bike)
-      expect(subject.release_bike.working?).to eq(true) 
+      expect(subject.release_bike.working?).to eq(true)
     end
     it 'throws error when empty' do
       expect { (subject.release_bike) }.to raise_error("Error, no bike available")
@@ -25,13 +25,15 @@ describe DockingStation do
       subject.dock(bike)
       expect(subject.bike).to eq bike
     end
-    
+
       it 'throws error when full' do
         bike = Bike.new
         subject.dock(bike)
         # 1.times {subject.dock(bike)}
-        expect { (subject.dock bike) }.to raise_error("Error, no free space available")
+        21.times { subject.dock (bike) }.to raise_error("Error, no free space available")
       end
+
+
   end
   # it 'releases working bikes' do
   #   bike = Bike.new

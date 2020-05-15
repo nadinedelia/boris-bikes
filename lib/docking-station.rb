@@ -3,17 +3,24 @@ require_relative 'bike'
 class DockingStation
 attr_reader :bike
 
+def initialize
+  @capacity = 20
+  @bikes = []
+end
+
+
   def release_bike
 if bike.nil?
   fail "Error, no bike available"
   end
-  @bike
+  bike
 end
 
   def dock(bike)
-    if @bike
+    if @bikes.length == @capacity
       fail "Error, no free space available"
-        end
-    @bike = bike
+    else
+    @bikes << bike
+end
 end
 end

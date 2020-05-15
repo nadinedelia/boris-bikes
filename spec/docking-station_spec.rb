@@ -33,8 +33,20 @@ describe DockingStation do
         expect { subject.dock(Bike.new) }.to raise_error("Error, no free space available")
       end
 
+      describe 'full?' do
+        it 'checks if station is full' do
+        20.times {subject.dock(Bike.new)}
+        expect(subject.full?).to eq(true)
+        end
 
+        describe 'empty?' do
+          it 'checks if station is empty' do
+          expect(subject.empty?).to eq(true)
+          end
+
+end
   end
+end
   # it 'releases working bikes' do
   #   bike = Bike.new
   #   expect(bike.working?).to eq(true)

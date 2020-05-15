@@ -10,11 +10,11 @@ class DockingStation
 
 
   def release_bike
-    if @bikes.length >= 1
+    if empty?
+      fail "Error, no bike available"
+      else
       Bike.new
       @bikes.pop
-    else
-      fail "Error, no bike available"
     end
   end
 
@@ -24,5 +24,16 @@ class DockingStation
     else
       fail "Error, no free space available"
     end
+  end
+
+  def full?
+    true
+  end
+
+  def empty?
+    if @bikes.length < 1
+      return true
+  end
+
   end
 end

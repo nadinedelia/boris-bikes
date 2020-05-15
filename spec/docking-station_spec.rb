@@ -17,20 +17,20 @@ describe DockingStation do
     docking_station = DockingStation.new
     it 'dock a bike' do
       bike = Bike.new
-      expect(subject.dock(bike)).to eq bike
+      expect(subject.dock(bike)).to be_instance_of(Array)
     end
 
     it 'returns docked bikes' do
       bike = Bike.new
       subject.dock(bike)
-      expect(subject.bike).to eq bike
+      expect(subject.bikes).to be_instance_of(Array)
     end
 
       it 'throws error when full' do
-        bike = Bike.new
-        subject.dock(bike)
-        # 1.times {subject.dock(bike)}
-        21.times { subject.dock (bike) }.to raise_error("Error, no free space available")
+        # bike = Bike.new
+        # subject.dock(bike)
+        20.times {subject.dock(Bike.new)}
+        expect { subject.dock(Bike.new) }.to raise_error("Error, no free space available")
       end
 
 

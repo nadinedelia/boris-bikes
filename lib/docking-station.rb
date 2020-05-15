@@ -1,7 +1,7 @@
 require_relative 'bike'
 
 class DockingStation
-attr_reader :bike
+attr_reader :bikes
 
 def initialize
   @capacity = 20
@@ -10,17 +10,20 @@ end
 
 
   def release_bike
-if bike.nil?
-  fail "Error, no bike available"
+    if @bikes.length >= 1
+      Bike.new
+      @bikes.pop
+    else
+      fail "Error, no bike available"
+    end
+
   end
-  bike
-end
 
   def dock(bike)
-    if @bikes.length == @capacity
-      fail "Error, no free space available"
+    if @bikes.length < @capacity
+      @bikes << bike
     else
-    @bikes << bike
-end
-end
+      fail "Error, no free space available"
+    end
+  end
 end

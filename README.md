@@ -1,4 +1,6 @@
-# boris-bikes
+# Boris Bikes, Pt. 4
+
+![](https://images.unsplash.com/photo-1553460977-f36165a48482?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
 
 This program will emulate all the docking stations,
 bikes, and infrastructure (repair staff, and so on)
